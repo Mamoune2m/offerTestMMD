@@ -4,8 +4,8 @@ Projet developped with Spring Boot.
 Project name: offertest
 
 ## Structure du projet 
-Le projet structured as following:\n
-    *Source code : located in /offertest/src/main/java/com/example/offertest/
+Le projet structured as following:<br />
+    *Source code : located in /offertest/src/main/java/com/example/offertest/  
 	* OffertestApplication.java: application main
         * aspect folder for service inputs and outputs logging.
         * service folder with logics to validate inputs before DB access.

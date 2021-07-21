@@ -1,7 +1,8 @@
 # AfOfferTest
 
-Projet developped with Spring Boot.
-Project name: offertest
+Projet developped with Spring Boot.  
+Project name: offertest  
+Author: Modou Mamoune DIENE  
 
 ## Structure du projet 
 Le projet structured as following:<br />

@@ -1,0 +1,185 @@
+{
+	"info": {
+		"_postman_id": "f1439259-ff1f-4c93-bd47-0b8611b6424e",
+		"name": "OfferTestPostMan",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "FrenchAdultUserRegister",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 10,\r\n    \"name\": \"beta\",\r\n    \"birthdate\": \"2000-11-12\",\r\n    \"residenceCountry\": \"France\",\r\n    \"phone\": null,\r\n    \"gender\": null\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/register",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DisplayFrenchAdultUser",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 10,\r\n    \"name\": \"beta\",\r\n    \"birthdate\": \"2000-11-12\",\r\n    \"residenceCountry\": \"France\",\r\n    \"phone\": null,\r\n    \"gender\": null\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/display/10",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"display",
+						"10"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "NotFoundUser",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 10,\r\n    \"name\": \"beta\",\r\n    \"birthdate\": \"2000-11-12\",\r\n    \"residenceCountry\": \"France\",\r\n    \"phone\": null,\r\n    \"gender\": null\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/display/11",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"display",
+						"11"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "YoungUserNotAuthorized",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 11,\r\n    \"name\": \"young\",\r\n    \"birthdate\": \"2015-11-12\",\r\n    \"residenceCountry\": \"France\",\r\n    \"phone\": null,\r\n    \"gender\": null\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/register",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "NotFrenchUserNotAuthorized",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 11,\r\n    \"name\": \"young\",\r\n    \"birthdate\": \"2000-11-12\",\r\n    \"residenceCountry\": \"Spain\",\r\n    \"phone\": null,\r\n    \"gender\": null\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/register",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CompleteUserRegistration",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 12,\r\n    \"name\": \"Adult\",\r\n    \"birthdate\": \"1980-11-12\",\r\n    \"residenceCountry\": \"FRANCE\",\r\n    \"phone\": 6668598,\r\n    \"gender\": \"Female\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/register",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"register"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

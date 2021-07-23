@@ -110,6 +110,27 @@ class OffertestApplicationTests {
 			      .andExpect(jsonPath("$.residenceCountry").value("France")); 
 	}
 	
+	@Test
+	void testExistingUserByName() throws Exception {
+		//Display registered user by name
+		mvc.perform(get("/api/display/byname?name=Toto")
+			      .contentType(MediaType.APPLICATION_JSON))
+			      .andExpect(status().isOk())
+			      .andExpect(jsonPath("$.id").value(1)) 
+			      .andExpect(jsonPath("$.name").value("Toto"))
+			      .andExpect(jsonPath("$.residenceCountry").value("France")); 
+	}
+	
+	@Test
+	void testRetrieveNoExistingUserByName() throws Exception {
+		
+		mvc.perform(get("/api/display/byname?name=Tata")
+				.contentType(MediaType.APPLICATION_JSON))
+	      		.andExpect(status().isNotFound())
+	            .andExpect(result -> assertTrue(result.getResolvedException().getMessage().contains("No User with name Tata found"))); 
+	}
+
+	
 	//Build Json from user informations
 	private String buildUserJson(Long id, String name, String birthdate, String residence) {
 		return buildUserJsonWithOptional(id, name, birthdate, residence, 0L, "");

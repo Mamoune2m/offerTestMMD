@@ -15,12 +15,14 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
 import com.example.offertest.exception.UserException;
 import com.example.offertest.model.User;
 import com.example.offertest.service.UserService;
+
 
 
 @RestController
@@ -49,6 +51,20 @@ public class UserController {
     	try {
     		//Retrieve user from database
         	User foundUser = userService.retrieveUser(id);
+        	return new ResponseEntity<>(foundUser, HttpStatus.OK);
+    	}
+    	catch (UserException e) {
+    		//User not present in DB
+    		throw new ResponseStatusException(
+    		           HttpStatus.NOT_FOUND, e.getMessage(), e);
+    	}
+    }
+    
+    @GetMapping("/display/byname")
+    public ResponseEntity<User> displayUser(@RequestParam String name) throws UserException {
+    	try {
+    		//Retrieve user from database
+    		User foundUser = userService.retrieveUserByName(name);
         	return new ResponseEntity<>(foundUser, HttpStatus.OK);
     	}
     	catch (UserException e) {

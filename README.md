@@ -12,7 +12,7 @@ link: /api/register
 * Error is thrown when user mandatory inputs are missing or not valid.  
 
 ### Display a user by id
-link: /api/display/id
+link: /api/display/id  
 Display all information for selected user using id 
 
 ### Display a user by name

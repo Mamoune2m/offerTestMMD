@@ -21,7 +21,7 @@ link: /api/display/byname?name=Toto
 
 ## Structure du projet 
 Le projet structured as following:  
-    *     Source code : located in /offertest/src/main/java/com/example/offertest/  
+&nbsp;&nbsp;&nbsp;&nbsp;*     Source code : located in /offertest/src/main/java/com/example/offertest/  
 	*       OffertestApplication.java: application main  
         *       aspect folder for service inputs and outputs logging.  
         *       service folder with logics to validate inputs before DB access.  

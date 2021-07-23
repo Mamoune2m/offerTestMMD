@@ -8,6 +8,7 @@
 package com.example.offertest.service;
 
 import java.time.Period;
+import java.util.Collection;
 import java.time.LocalDate;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,6 +42,18 @@ public class UserServiceImpl implements UserService {
 	public User retrieveUser(Long userId) {
 		User foundUser = userRepository.findById(userId).orElseThrow(() -> new UserException(userId));
 		return foundUser;
+	}
+
+	@Override
+	public User retrieveUserByName(String name) {
+		Collection<User> foundUsers = userRepository.findByName(name);
+		if(foundUsers.isEmpty()) {
+			throw new UserException("No User with name "+ name + " found");
+		} else if (foundUsers.size() > 1) {
+			throw new UserException("Several users with name "+ name + " exist, please use id");
+		}
+		
+		return foundUsers.stream().findFirst().get();
 	}
 	
 	//User validations methods
@@ -106,4 +119,5 @@ public class UserServiceImpl implements UserService {
 
 		return isAdult;
 	}
+
 }

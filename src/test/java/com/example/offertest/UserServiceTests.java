@@ -20,7 +20,7 @@ import com.example.offertest.exception.UserException;
 import com.example.offertest.model.User;
 import com.example.offertest.repository.UserRepository;
 import com.example.offertest.service.UserService;
-
+import java.util.Arrays;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -39,7 +39,11 @@ public class UserServiceTests {
 	    Mockito.when(userRepository.findById(user.getId()))
 	      .thenReturn(Optional.of(user));
 	    
-	    Mockito.when(userRepository.save(user))
+	    User userSameName = getUser(3L, "Toto", 40, "France");
+	    Mockito.when(userRepository.findByName(user.getName()))
+	      .thenReturn(Arrays.asList(user, userSameName));
+	    
+	    Mockito.when(userRepository.save(Mockito.any(User.class)))
 	      .thenReturn(user);
 	}
 	
@@ -51,6 +55,22 @@ public class UserServiceTests {
 	     assertThat(found.getName())
 	      .isEqualTo(name);
 	 }
+	
+	@Test
+	public void testFindUserByName() {
+		//Several with same name Toto
+	    Throwable exception = assertThrows(UserException.class, () -> userService.retrieveUserByName("Toto"));
+	    assertEquals("Several users with name Toto exist, please use id", exception.getMessage());
+	 }
+
+	
+	@Test
+	public void testCorrectUserRegistration() {
+		//Test user registration without error
+		User SavedUser = userRepository.save(getUser(1L, "Toto", 40, "France"));
+		assertThat(SavedUser.getName())
+	      .isEqualTo("Toto");;
+	}
 	
 	@Test
 	public void testYoungUser() {

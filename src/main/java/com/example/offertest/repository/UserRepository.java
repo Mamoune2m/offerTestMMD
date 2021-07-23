@@ -7,10 +7,12 @@
 
 package com.example.offertest.repository;
 
+import java.util.Collection;
+
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 import com.example.offertest.model.User;
 
 public interface UserRepository extends MongoRepository<User, Long> {
-
+	Collection<User> findByName(String name);
 }

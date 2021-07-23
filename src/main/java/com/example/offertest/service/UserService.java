@@ -7,10 +7,13 @@
 
 package com.example.offertest.service;
 
+
 import com.example.offertest.model.User;
 
 public interface UserService {
 
 	public User processUserCreation(User user);
 	public User retrieveUser(Long userId);
+	public User retrieveUserByName(String name);
+	
 }

@@ -21,19 +21,19 @@ link: /api/display/byname?name=Toto
 
 ## Structure du projet 
 Le projet structured as following:  
-    * Source code : located in /offertest/src/main/java/com/example/offertest/  
-		* OffertestApplication.java: application main  
-        * aspect folder for service inputs and outputs logging.  
-        * service folder with logics to validate inputs before DB access.  
-        * repository where UserRepository is define to handle MongoDB requests.  
-		* controlller folder with user REST controller.  
-		* model folder for user document definition.  
-		* exception contains exceptions handling class.  
-	* Test folder: /offertest/src/test/java/com/example/offertest/  
-		* OffertestApplicationTests.java: Test MVC REST API requests.  
-		* UserServiceTests.java: Test service methods with mocked userRepository.  
-    * READMD: with project details  
-    * PostMan Collection: available in /offertest/OfferTestPostMan.postman_collection.json  
+    *     Source code : located in /offertest/src/main/java/com/example/offertest/  
+	*       OffertestApplication.java: application main  
+        *       aspect folder for service inputs and outputs logging.  
+        *       service folder with logics to validate inputs before DB access.  
+        *       repository where UserRepository is define to handle MongoDB requests.  
+	*       controlller folder with user REST controller.  
+	*       model folder for user document definition.  
+	*       exception contains exceptions handling class.  
+     *     Test folder: /offertest/src/test/java/com/example/offertest/  
+	*       OffertestApplicationTests.java: Test MVC REST API requests.  
+	*       UserServiceTests.java: Test service methods with mocked userRepository.  
+    *     READMD: with project details  
+    *     PostMan Collection: available in /offertest/OfferTestPostMan.postman_collection.json  
 
 ## Build and test project  
 Project can be tested with maven with line command or via IDE like Eclipse  

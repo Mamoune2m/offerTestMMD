@@ -21,26 +21,26 @@ link: /api/display/byname?name=Toto
 
 ## Structure du projet 
 Le projet structured as following:  
-&nbsp;&nbsp;&nbsp;&nbsp;*     Source code : located in /offertest/src/main/java/com/example/offertest/  
-	*       OffertestApplication.java: application main  
-        *       aspect folder for service inputs and outputs logging.  
-        *       service folder with logics to validate inputs before DB access.  
-        *       repository where UserRepository is define to handle MongoDB requests.  
-	*       controlller folder with user REST controller.  
-	*       model folder for user document definition.  
-	*       exception contains exceptions handling class.  
-     *     Test folder: /offertest/src/test/java/com/example/offertest/  
-	*       OffertestApplicationTests.java: Test MVC REST API requests.  
-	*       UserServiceTests.java: Test service methods with mocked userRepository.  
-    *     READMD: with project details  
-    *     PostMan Collection: available in /offertest/OfferTestPostMan.postman_collection.json  
+&nbsp;&nbsp;&nbsp;&nbsp;* Source code : located in /offertest/src/main/java/com/example/offertest/  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* OffertestApplication.java: application main  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* aspect folder for service inputs and outputs logging.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* service folder with logics to validate inputs before DB access.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* repository where UserRepository is define to handle MongoDB requests.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* controlller folder with user REST controller.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* model folder for user document definition.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* exception contains exceptions handling class.  
+&nbsp;&nbsp;&nbsp;&nbsp;* Test folder: /offertest/src/test/java/com/example/offertest/  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* OffertestApplicationTests.java: Test MVC REST API requests.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* UserServiceTests.java: Test service methods with mocked userRepository.  
+&nbsp;&nbsp;&nbsp;&nbsp;* READMD: with project details  
+&nbsp;&nbsp;&nbsp;&nbsp;* PostMan Collection: available in /offertest/OfferTestPostMan.postman_collection.json  
 
 ## Build and test project  
 Project can be tested with maven with line command or via IDE like Eclipse  
-	*Postman with Eclipse:  
-		*Run project: right click on OffertestApplication.java -> Rus As -> Java Application  
-		*Test with Post Man collection  
-	*Unit test: with maven test from terminal or right click on the Eclipse project -> Rus As -> Maven test  
+&nbsp;&nbsp;* Postman with Eclipse:  
+&nbsp;&nbsp;&nbsp;&nbsp;* Run project: right click on OffertestApplication.java -> Rus As -> Java Application  
+&nbsp;&nbsp;&nbsp;&nbsp;* Test with Post Man collection  
+&nbsp;&nbsp;* Unit test: with maven test from terminal or right click on the Eclipse project -> Rus As -> Maven test  
   
 ## Constraints
 Only French user can register (User.residenceCountry should be France, not case sentive).  
